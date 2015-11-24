@@ -116,6 +116,11 @@ public class PostServer {
     } 
 	
 	
+    public String regedit(String phone,String password){
+        String sr=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
+                "transCode=0001&phone=138101080&password=E10ADC3949BA59ABBE56E057F20F883E&iden=123456789012345678&sysno=000001&mac=ffffff");
+       return sr;
+    }
 	/**
 	 * @param args
 	 */
@@ -123,20 +128,20 @@ public class PostServer {
 	    //·¢ËÍGet ÇëÇó
 	    //001×¢²á
 	    String srget=PostServer.sendGet("http://106.39.11.235:8001/testService/infoserver", 
-                "transCode=0001&phone=13810108016&password=E10ADC3949BA59ABBE56E057F20F883E&iden=123456789012345678&sysno=000001&mac=ffffff");
+                "transCode=0001");
         System.out.println(srget);
 
         //·¢ËÍ POST ÇëÇó
 		//0001 ×¢²á
         String sr=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
-        		"transCode=0001&phone=13810108016&password=E10ADC3949BA59ABBE56E057F20F883E&iden=123456789012345678&sysno=000001&mac=ffffff");
+        		"transCode=0001&phone=138101080&password=E10ADC3949BA59ABBE56E057F20F883E&iden=123456789012345678&sysno=000001&mac=ffffff");
         System.out.println(sr);
 
         //0002 µÇÂ¼
 //        String sr1=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
 //        		"transCode=0002&phone=18825180178&password=E10ADC3949BA59ABBE56E057F20F883E&sysno=000001&mac=ffffff");
         String sr1=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
-                "transCode=0002&phone=18825180178&password=61A60170273E74A5BE90355FFE8E86AD&sysno=000001&mac=ffffff");
+                "transCode=0002&phone=18825180176&password=61A60170273E74A5BE90355FFE8E86AD&sysno=000001&mac=ffffff");
         System.out.println(sr1);
         
         //0003 »ñÈ¡ÊÚÈ¨Âë
