@@ -10,6 +10,18 @@ import java.util.List;
 import java.util.Map;
 
 public class PostServer {
+    private final String Send_Url = "http://112.65.228.36:8899/sms/Api/Send.do";
+
+    // private final String LoginName = "admin";
+    //private final String LoginName = "waibao";
+    private final String LoginName = "haikong";
+    
+    // private final String Password = "mac233391";
+    //private final String Password = "waibao.123456";
+    private final String Password = "haikong123";
+
+    //private final String SpCode = "217653";
+    private final String SpCode = "219691";
     
     public static String sendGet(String url, String param){
         String result = "";
@@ -121,6 +133,7 @@ public class PostServer {
                 "transCode=0001&phone=138101080&password=E10ADC3949BA59ABBE56E057F20F883E&iden=123456789012345678&sysno=000001&mac=ffffff");
        return sr;
     }
+
 	/**
 	 * @param args
 	 */
@@ -148,6 +161,6 @@ public class PostServer {
         String sr2=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
         		"transCode=0003&phone=13810108016&token=2eabd2ba30d7457b9a4f727de39c64a0&sysno=000001&mac=ffffff");
         System.out.println(sr2);
-        
+          
 	}
 }

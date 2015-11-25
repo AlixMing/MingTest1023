@@ -22,5 +22,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="E:/jar/flexjson/flexjson-3.2.jar"/>
 	<classpathentry kind="lib" path="E:/jar/quartz-1.8.6-sources.jar"/>
+	<classpathentry kind="lib" path="E:/jar/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
