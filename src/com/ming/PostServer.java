@@ -10,18 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 public class PostServer {
-    private final String Send_Url = "http://112.65.228.36:8899/sms/Api/Send.do";
-
-    // private final String LoginName = "admin";
-    //private final String LoginName = "waibao";
-    private final String LoginName = "haikong";
-    
-    // private final String Password = "mac233391";
-    //private final String Password = "waibao.123456";
-    private final String Password = "haikong123";
-
-    //private final String SpCode = "217653";
-    private final String SpCode = "219691";
     
     public static String sendGet(String url, String param){
         String result = "";
@@ -126,13 +114,6 @@ public class PostServer {
         }
         return result;
     } 
-	
-	
-    public String regedit(String phone,String password){
-        String sr=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
-                "transCode=0001&phone=138101080&password=E10ADC3949BA59ABBE56E057F20F883E&iden=123456789012345678&sysno=000001&mac=ffffff");
-       return sr;
-    }
 
 	/**
 	 * @param args
@@ -151,8 +132,6 @@ public class PostServer {
         System.out.println(sr);
 
         //0002 µÇÂ¼
-//        String sr1=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
-//        		"transCode=0002&phone=18825180178&password=E10ADC3949BA59ABBE56E057F20F883E&sysno=000001&mac=ffffff");
         String sr1=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
                 "transCode=0002&phone=18825180176&password=61A60170273E74A5BE90355FFE8E86AD&sysno=000001&mac=ffffff");
         System.out.println(sr1);
