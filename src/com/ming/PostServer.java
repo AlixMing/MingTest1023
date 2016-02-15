@@ -19,17 +19,17 @@ public class PostServer {
             URL realUrl = new URL(urlNameParam);
             URLConnection connection = realUrl.openConnection();
             
-            // ÉèÖÃÍ¨ÓÃµÄÇëÇóÊôÐÔ
+            // ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             connection.setRequestProperty("accept", "*/*");
             connection.setRequestProperty("connection", "Keep-Alive");
             connection.setRequestProperty("user-agent",
                     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
-            // ½¨Á¢Êµ¼ÊµÄÁ¬½Ó
+            // ï¿½ï¿½ï¿½ï¿½Êµï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½
             connection.connect();
             
-            // »ñÈ¡ËùÓÐÏìÓ¦Í·×Ö¶Î
+            // ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í·ï¿½Ö¶ï¿½
             Map<String, List<String>> map = connection.getHeaderFields();
-            // ±éÀúËùÓÐµÄÏìÓ¦Í·×Ö¶Î
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ó¦Í·ï¿½Ö¶ï¿½
             for (String key : map.keySet()) {
                 System.out.println(key + "--->" + map.get(key));
             }
@@ -40,10 +40,10 @@ public class PostServer {
                 result += line;
             }
         }catch (Exception e) {
-            System.out.println("·¢ËÍGETÇëÇó³öÏÖÒì³££¡" + e);
+            System.out.println("ï¿½ï¿½ï¿½ï¿½GETï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½" + e);
             e.printStackTrace();
         }
-        // Ê¹ÓÃfinally¿éÀ´¹Ø±ÕÊäÈëÁ÷
+        // Ê¹ï¿½ï¿½finallyï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         finally {
             try {
                 if (in != null) {
@@ -57,13 +57,13 @@ public class PostServer {
     }
 
 	/**
-     * ÏòÖ¸¶¨ URL ·¢ËÍPOST·½·¨µÄÇëÇó
+     * ï¿½ï¿½Ö¸ï¿½ï¿½ URL ï¿½ï¿½ï¿½ï¿½POSTï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * 
      * @param url
-     *            ·¢ËÍÇëÇóµÄ URL
+     *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ URL
      * @param param
-     *            ÇëÇó²ÎÊý£¬ÇëÇó²ÎÊýÓ¦¸ÃÊÇ name1=value1&name2=value2 µÄÐÎÊ½¡£
-     * @return Ëù´ú±íÔ¶³Ì×ÊÔ´µÄÏìÓ¦½á¹û
+     *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ name1=value1&name2=value2 ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½
+     * @return ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½
      */
     public static String sendPost(String url, String param) {
         PrintWriter out = null;
@@ -71,23 +71,26 @@ public class PostServer {
         String result = "";
         try {
             URL realUrl = new URL(url);
-            // ´ò¿ªºÍURLÖ®¼äµÄÁ¬½Ó
+            // ï¿½ò¿ªºï¿½URLÖ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             URLConnection conn = realUrl.openConnection();
-            // ÉèÖÃÍ¨ÓÃµÄÇëÇóÊôÐÔ
+            // ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             conn.setRequestProperty("accept", "*/*");
             conn.setRequestProperty("connection", "Keep-Alive");
             conn.setRequestProperty("user-agent",
                     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
-            // ·¢ËÍPOSTÇëÇó±ØÐëÉèÖÃÈçÏÂÁ½ÐÐ
+            //conn.setRequestProperty("Content-Type", "application/json");
+            conn.setRequestProperty("user", "ktapi");
+            conn.setRequestProperty("pwd", "0306C3");
+            // ï¿½ï¿½ï¿½ï¿½POSTï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             conn.setDoOutput(true);
             conn.setDoInput(true);
-            // »ñÈ¡URLConnection¶ÔÏó¶ÔÓ¦µÄÊä³öÁ÷
+            // ï¿½ï¿½È¡URLConnectionï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             out = new PrintWriter(conn.getOutputStream());
-            // ·¢ËÍÇëÇó²ÎÊý
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             out.print(param);
-            // flushÊä³öÁ÷µÄ»º³å
+            // flushï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
             out.flush();
-            // ¶¨ÒåBufferedReaderÊäÈëÁ÷À´¶ÁÈ¡URLµÄÏìÓ¦
+            // ï¿½ï¿½ï¿½ï¿½BufferedReaderï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡URLï¿½ï¿½ï¿½ï¿½Ó¦
             in = new BufferedReader(
                     new InputStreamReader(conn.getInputStream()));
             String line;
@@ -95,10 +98,10 @@ public class PostServer {
                 result += line;
             }
         } catch (Exception e) {
-            System.out.println("·¢ËÍ POST ÇëÇó³öÏÖÒì³££¡"+e);
+            System.out.println("ï¿½ï¿½ï¿½ï¿½ POST ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½"+e);
             e.printStackTrace();
         }
-        //Ê¹ÓÃfinally¿éÀ´¹Ø±ÕÊä³öÁ÷¡¢ÊäÈëÁ÷
+        //Ê¹ï¿½ï¿½finallyï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         finally{
             try{
                 if(out!=null){
@@ -119,26 +122,25 @@ public class PostServer {
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
-	    //·¢ËÍGet ÇëÇó
-	    //001×¢²á
-	    String srget=PostServer.sendGet("http://106.39.11.235:8001/testService/infoserver", 
-                "transCode=0001");
-        System.out.println(srget);
-
-        //·¢ËÍ POST ÇëÇó
-		//0001 ×¢²á
-        String sr=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
-        		"transCode=0001&phone=138101080&password=E10ADC3949BA59ABBE56E057F20F883E&iden=123456789012345678&sysno=000001&mac=ffffff");
-        System.out.println(sr);
-
-        //0002 µÇÂ¼
-        String sr1=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
-                "transCode=0002&phone=18825180176&password=61A60170273E74A5BE90355FFE8E86AD&sysno=000001&mac=ffffff");
-        System.out.println(sr1);
+	    //ï¿½ï¿½ï¿½ï¿½Get ï¿½ï¿½ï¿½ï¿½
+	    //001×¢ï¿½ï¿½
+//	    String srget=PostServer.sendGet("http://106.39.11.235:8001/testService/infoserver", 
+//                "transCode=0001");
+//        System.out.println(srget);
+//
+//        //ï¿½ï¿½ï¿½ï¿½ POST ï¿½ï¿½ï¿½ï¿½
+//		//0001 ×¢ï¿½ï¿½
+//        String sr=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
+//        		"transCode=0001&phone=138101080&password=E10ADC3949BA59ABBE56E057F20F883E&iden=123456789012345678&sysno=000001&mac=ffffff");
+//        System.out.println(sr);
+//
+//        //0002 ï¿½ï¿½Â¼
+//        String sr1=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
+//                "transCode=0002&phone=18825180176&password=61A60170273E74A5BE90355FFE8E86AD&sysno=000001&mac=ffffff");
+//        System.out.println(sr1);
         
-        //0003 »ñÈ¡ÊÚÈ¨Âë
-        String sr2=PostServer.sendPost("http://106.39.11.235:8001/testService/infoserver", 
-        		"transCode=0003&phone=13810108016&token=2eabd2ba30d7457b9a4f727de39c64a0&sysno=000001&mac=ffffff");
+        //0003 ï¿½ï¿½È¡ï¿½ï¿½È¨ï¿½ï¿½
+        String sr2=PostServer.sendPost("http://172.16.24.210:8099/Api/System/ModifyCardBindCar","data=JtXrM+dG1JqEbEieUkKKelaWDmhTrxKxNgfwXn7xDc4eaiE1HRx6vNcPVXN4Hvg5/ZErNbRTYHs=");
         System.out.println(sr2);
           
 	}

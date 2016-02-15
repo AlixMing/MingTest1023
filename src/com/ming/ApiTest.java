@@ -1,5 +1,5 @@
 /**
- * @author waiting, 2015Äê10ÔÂ14ÈÕ ÏÂÎç4:13:42
+ * @author waiting, 2015ï¿½ï¿½10ï¿½ï¿½14ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½4:13:42
  */
 package com.ming;
 
@@ -18,18 +18,18 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 /**
- * @author waiting, 2015Äê10ÔÂ14ÈÕ ÏÂÎç4:13:42
+ * @author waiting, 2015ï¿½ï¿½10ï¿½ï¿½14ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½4:13:42
  */
 public class ApiTest {
 
 //    /**
-//     * @author waiting, 2015Äê10ÔÂ14ÈÕ ÏÂÎç4:13:42
+//     * @author waiting, 2015ï¿½ï¿½10ï¿½ï¿½14ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½4:13:42
 //     * @param args
 //     */
 //    public static void main(String[] args) {
 //        CloseableHttpClient httpClient = HttpClients.createDefault();
 //        HttpPost httpPost = new HttpPost("http://api.36wu.com/Weather/GetAreaList");
-//        //Æ´½Ó²ÎÊý
+//        //Æ´ï¿½Ó²ï¿½ï¿½ï¿½
 //        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 //        nvps.add(new BasicNameValuePair("username", "vip"));
 //        nvps.add(new BasicNameValuePair("password", "secret"));
@@ -40,7 +40,7 @@ public class ApiTest {
 //            HttpEntity entity2 = response2.getEntity();
 //            // do something useful with the response body
 //            // and ensure it is fully consumed
-//            //ÏûºÄµôresponse
+//            //ï¿½ï¿½Äµï¿½response
 //            EntityUtils.consume(entity2);
 //        } catch (Exception e) {
 //            e.printStackTrace();
@@ -48,43 +48,70 @@ public class ApiTest {
 //    }
     
     /**
-     * @author waiting, 2015Äê10ÔÂ14ÈÕ ÏÂÎç4:13:42
+     * @author waiting, 2015ï¿½ï¿½10ï¿½ï¿½14ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½4:13:42
      * @param args
      */
     public static void main(String[] args) {
-        String Send_Url = "http://112.65.228.36:8899/sms/Api/Send.do";
-
-        String LoginName = "haikong";
+//        String Send_Url = "http://112.65.228.36:8899/sms/Api/Send.do";
+//
+//        String LoginName = "haikong";
+//        
+//        String Password = "";
+//
+//        String SpCode = "219691";
+//        
+//        CloseableHttpClient httpClient = HttpClients.createDefault();
+//        HttpPost httpPost = new HttpPost(Send_Url);
+//        
+//        //Æ´ï¿½Ó²ï¿½ï¿½ï¿½
+//        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+//        nvps.add(new BasicNameValuePair("SpCode", SpCode));
+//        nvps.add(new BasicNameValuePair("LoginName", LoginName));
+//        nvps.add(new BasicNameValuePair("Password", Password));
+//        nvps.add(new BasicNameValuePair("MessageContent", "ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½Appdï¿½ï¿½Ö¤ï¿½ï¿½124514ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ë¶ï¿½ï¿½Å¡ï¿½"));
+//        nvps.add(new BasicNameValuePair("UserNumber", "18825180178"));
+//        nvps.add(new BasicNameValuePair("SerialNumber", ""));
+//        nvps.add(new BasicNameValuePair("ScheduleTime", ""));
+//        nvps.add(new BasicNameValuePair("f", "1"));
+//        
+//        try {
+//            httpPost.setEntity(new UrlEncodedFormEntity(nvps, "gb2312"));
+//            CloseableHttpResponse response2 = httpClient.execute(httpPost);
+//            System.out.println(response2.getStatusLine());
+//            HttpEntity entity2 = response2.getEntity();
+//            
+//            String result = EntityUtils.toString(entity2, "gb2312"); 
+//            System.out.println(result);
+//            // do something useful with the response body
+//            // and ensure it is fully consumed
+//            //ï¿½ï¿½Äµï¿½response
+//            EntityUtils.consume(entity2);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         
-        String Password = "";
-
-        String SpCode = "219691";
+        
+        String Send_Url = "http://172.16.24.210:8099/api/pay/ModifyCardBindCar";
         
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(Send_Url);
         
-        //Æ´½Ó²ÎÊý
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-        nvps.add(new BasicNameValuePair("SpCode", SpCode));
-        nvps.add(new BasicNameValuePair("LoginName", LoginName));
-        nvps.add(new BasicNameValuePair("Password", Password));
-        nvps.add(new BasicNameValuePair("MessageContent", "º£¿ØÉÌ³ÇAppdÑéÖ¤Âë124514±¾ÑéÖ¤ÂëÔÚ1·ÖÖÓÄÚÓÐÐ§£¬Èç·Ç±¾ÈË²Ù×÷ÇëºöÂÔ´Ë¶ÌÐÅ¡£"));
-        nvps.add(new BasicNameValuePair("UserNumber", "18825180178"));
-        nvps.add(new BasicNameValuePair("SerialNumber", ""));
-        nvps.add(new BasicNameValuePair("ScheduleTime", ""));
-        nvps.add(new BasicNameValuePair("f", "1"));
+
+        nvps.add(new BasicNameValuePair("oldCarPlateNum", "111111"));
+        nvps.add(new BasicNameValuePair("newCarPlateNum", "123456"));
         
         try {
-            httpPost.setEntity(new UrlEncodedFormEntity(nvps, "gb2312"));
+            httpPost.setEntity(new UrlEncodedFormEntity(nvps, "UTF-8"));
             CloseableHttpResponse response2 = httpClient.execute(httpPost);
             System.out.println(response2.getStatusLine());
             HttpEntity entity2 = response2.getEntity();
             
-            String result = EntityUtils.toString(entity2, "gb2312"); 
+            String result = EntityUtils.toString(entity2, "UTF-8"); 
             System.out.println(result);
             // do something useful with the response body
             // and ensure it is fully consumed
-            //ÏûºÄµôresponse
+            //ï¿½ï¿½Äµï¿½response
             EntityUtils.consume(entity2);
         } catch (Exception e) {
             e.printStackTrace();
