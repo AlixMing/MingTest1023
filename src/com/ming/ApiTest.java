@@ -52,7 +52,7 @@ public class ApiTest {
      * @param args
      */
     public static void main(String[] args) {
-//        String Send_Url = "http://112.65.228.36:8899/sms/Api/Send.do";
+//        String Send_Url = "https://api.ums86.com:9600/sms/Api/Send.do";
 //
 //        String LoginName = "haikong";
 //        
