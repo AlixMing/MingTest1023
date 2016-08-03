@@ -1,7 +1,7 @@
 /**
  * @author Alix_huang, 2016年8月3日 上午11:26:51
  */
-package com.ming;
+package com.ming.thread;
 
 
 /**

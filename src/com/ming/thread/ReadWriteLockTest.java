@@ -1,7 +1,7 @@
 /**
  * @author Alix_huang, 2016年8月3日 上午10:51:27
  */
-package com.ming;
+package com.ming.thread;
 
 import java.util.HashMap;
 import java.util.Map;
