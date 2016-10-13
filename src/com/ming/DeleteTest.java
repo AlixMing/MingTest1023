@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.sql.rowset.Predicate;
+
 
 /**
  * 从一个java的集合中，根据另一个集合的内容，删除第一个集合中不特定的元素
